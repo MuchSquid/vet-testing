@@ -2,6 +2,7 @@ import { login } from "./actions";
 import { Inter } from "next/font/google";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,7 +11,10 @@ export default function LoginPage() {
     <div
       className={`${inter.className} flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-200 p-4`}
     >
-      <form className="w-full max-w-md space-y-6 rounded-2xl bg-white p-8 shadow-lg">
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50">
+        <Image src="/vet1.avif" alt="Background" fill />
+      </div>
+      <form className="relative z-10 w-full max-w-md space-y-6 rounded-2xl bg-white p-8 shadow-lg">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-semibold text-gray-900">Welcome Back</h1>
           <p className="text-sm text-gray-500">Please sign in to your account</p>
