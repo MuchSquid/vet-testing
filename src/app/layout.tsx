@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import SideBar from "./components/sidebar";
+import LayoutClient from "./layout-client";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,10 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#f2f2f2] text-black`}
       >
-        <div className="grid h-dvh md:grid-cols-[256px_1fr] grid-cols-1">
-          <SideBar />
-          <main className="overflow-auto p-4 md:p-6">{children}</main>
-        </div>
+        <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
   );
